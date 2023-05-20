@@ -7,6 +7,7 @@ import {EditDomaineComponent} from "../../domaine/edit-domaine/edit-domaine.comp
 import {AddDomaineComponent} from "../../domaine/add-domaine/add-domaine.component";
 import {Demande} from "../../models/demande/demande.model";
 import {DemandeService} from "../../service/demande/demande.service";
+import {AddDemandeComponent} from "../add-demande/add-demande.component";
 
 @Component({
     selector: 'app-icons',
@@ -15,7 +16,7 @@ import {DemandeService} from "../../service/demande/demande.service";
 })
 export class ListDemandeDeploiementComponent implements OnInit {
     demande: Demande[];
-    displayedColumns: string[] = ['dateDemande', 'nomProjet', 'mail', 'observations', 'action'];
+    displayedColumns: string[] = ['dateDemande', 'projet', 'mails', 'observations', 'action'];
     dataSource = new MatTableDataSource<Demande>();
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -36,7 +37,7 @@ export class ListDemandeDeploiementComponent implements OnInit {
     }
 
 
-    deleteDomaine(id: number) {
+    deleteDemande(id: number) {
         this.demandeService.deleteDemande(id).subscribe({
             next: (res) => {
                 this.getListOfDemandes();
@@ -59,8 +60,8 @@ export class ListDemandeDeploiementComponent implements OnInit {
         });
     }
 
-    addDomaine() {
-        const dialogRef = this.domaineDialog.open(AddDomaineComponent, {});
+    addDemande() {
+        const dialogRef = this.domaineDialog.open(AddDemandeComponent, {});
         dialogRef.afterClosed().subscribe({
             next: (val) => {
                 if (val) {

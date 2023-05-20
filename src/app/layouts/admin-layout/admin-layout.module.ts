@@ -27,6 +27,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {AddProjetComponent} from "../../projet/add-projet/add-projet.component";
 import {EditDomaineComponent} from "../../domaine/edit-domaine/edit-domaine.component";
 import {AddDomaineComponent} from "../../domaine/add-domaine/add-domaine.component";
+import {AddDemandeComponent} from "../../demande-deploiement/add-demande/add-demande.component";
 
 @NgModule({
     imports: [
@@ -61,7 +62,8 @@ import {AddDomaineComponent} from "../../domaine/add-domaine/add-domaine.compone
         EditprojetComponent,
         AddProjetComponent,
         EditDomaineComponent,
-        AddDomaineComponent
+        AddDomaineComponent,
+        AddDemandeComponent
     ]
 })
 

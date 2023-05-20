@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Projet} from "../../models/projet/projet.model";
 import {Demande} from "../../models/demande/demande.model";
 
 @Injectable({
@@ -16,12 +15,12 @@ export class DemandeService {
   }
 
   getDemandetList(): Observable<Demande[]> {
-    return this.http.get<Projet[]>(`${this.baseUrl}` + 'list-demande');
+    return this.http.get<Demande[]>(`${this.baseUrl}` + 'list-demande');
 
   }
 
-  createDemande(projet: Demande): Observable<Demande> {
-    return this.http.post<Projet>(`${this.baseUrl}` + 'save-demande', projet);
+  createDemande(demande: Demande): Observable<Demande> {
+    return this.http.post<Demande>(`${this.baseUrl}` + 'save-demande', demande);
   }
 
   deleteDemande(id: number): Observable<any> {

@@ -9,6 +9,8 @@ import {AppComponent} from './app.component';
 import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import { AddDemandeComponent } from './demande-deploiement/add-demande/add-demande.component';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
     imports: [
@@ -20,12 +22,14 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
         RouterModule,
         AppRoutingModule,
         MatInputModule,
-        MatDatepickerModule
+        MatDatepickerModule,
+        MatSelectModule
 
     ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

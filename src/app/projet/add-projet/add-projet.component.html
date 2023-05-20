@@ -23,7 +23,7 @@
 
             <mat-form-field appearance="outline">
                 <mat-label>Statut Prerequis</mat-label>
-                <input matInput type="email" placeholder="" formControlName="statutPrerequis">
+                <input matInput type="text" placeholder="" formControlName="statutPrerequis">
             </mat-form-field>
         </div>
         <div class="row">
@@ -37,17 +37,15 @@
         <mat-form-field appearance="outline">
             <mat-label>Date Debut</mat-label>
             <input matInput [matDatepicker]="picker" formControlName="dateDebut">
-            <mat-hint>DD/MM/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Date Fin</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="dateFin">
-            <mat-hint>DD/MM/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="picker2" formControlName="dateFin">
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
     </div>
 
