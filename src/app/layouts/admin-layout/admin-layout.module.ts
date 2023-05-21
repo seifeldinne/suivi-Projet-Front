@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -13,7 +13,7 @@ import {NotificationsComponent} from '../../notifications/notifications.componen
 import {UpgradeComponent} from '../../upgrade/upgrade.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {DateAdapter, MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
@@ -28,6 +28,15 @@ import {AddProjetComponent} from "../../projet/add-projet/add-projet.component";
 import {EditDomaineComponent} from "../../domaine/edit-domaine/edit-domaine.component";
 import {AddDomaineComponent} from "../../domaine/add-domaine/add-domaine.component";
 import {AddDemandeComponent} from "../../demande-deploiement/add-demande/add-demande.component";
+import {adapterFactory} from "angular-calendar/date-adapters/moment";
+import {
+    CalendarCommonModule,
+    CalendarDayModule,
+    CalendarModule,
+    CalendarMonthModule,
+    CalendarWeekModule
+} from "angular-calendar";
+
 
 @NgModule({
     imports: [
@@ -47,9 +56,15 @@ import {AddDemandeComponent} from "../../demande-deploiement/add-demande/add-dem
         MatDialogModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        CalendarDayModule,
+        CalendarWeekModule,
+        CalendarMonthModule,
+        CalendarCommonModule,
+
         //   MatSortModule,*/
     ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     declarations: [
         DashboardComponent,
         UserProfileComponent,
@@ -63,7 +78,7 @@ import {AddDemandeComponent} from "../../demande-deploiement/add-demande/add-dem
         AddProjetComponent,
         EditDomaineComponent,
         AddDomaineComponent,
-        AddDemandeComponent
+        AddDemandeComponent,
     ]
 })
 
